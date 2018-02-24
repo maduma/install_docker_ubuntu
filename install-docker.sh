@@ -1,8 +1,10 @@
 set -x
 
+perl -i -pe 's/^(127.0.0.1 .*)/\1 docker/' /etc/hosts
+
 apt-get update
 
-apt-get install \
+apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -16,6 +18,6 @@ add-apt-repository \
    stable"
 
 apt-get update
-apt-get install docker-ce
-docker run hello-world
+apt-get install -y docker-ce
+docker run --rm hello-world
 usermod -aG docker ubuntu
