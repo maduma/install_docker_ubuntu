@@ -1,6 +1,7 @@
 set -x
-
-perl -i -pe 's/^(127.0.0.1 .*)/\1 docker/' /etc/hosts
+env
+HOSTNAME=$( uname -n )
+perl -i -pe "s/^(127.0.0.1 .*)/\1 $HOSTNAME/" /etc/hosts
 
 apt-get update
 
