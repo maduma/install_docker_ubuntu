@@ -21,3 +21,4 @@ apt-get update
 apt-get install -y docker-ce
 docker run --rm hello-world
 usermod -aG docker ubuntu
+shutdown -r now
