@@ -20,7 +20,6 @@ add-apt-repository \
 
 apt-get update
 apt-get install -y docker-ce
-docker run --rm hello-world
 usermod -aG docker ubuntu
-apt upgrade -y
+#apt upgrade -y
 shutdown -r now
